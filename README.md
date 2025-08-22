@@ -1,11 +1,10 @@
-# Assignment 6: Build a Smart Customer Support Bot using OpenAI Agent SDK
+# Assignment 7: Custom-Web-Search-Tool
 
-Assignment 6: Build a Smart Customer Support Bot using OpenAI Agent SDK, This project is a CLI Based **Smart Customer Support Bot using OpenAI Agent SDK** built with the **OpenAI Agent SDK** and **Google Gemini API** in python & @GuardRails with help of docs at [https://openai.github.io/openai-agents-python/guardrails/](https://openai.github.io/openai-agents-python/guardrails/) .
+Assignment 7: Custom-Web-Search-Tool for Agent using Tavily APi & OpenAI Agent SDK, This project is a CLI Based **WEB_SEARCH_AGENT** built with the **OpenAI Agent SDK** and **Google Gemini API** in python & web search tool with help of docs at [https://docs.tavily.com/documentation/api-reference/endpoint/search](https://docs.tavily.com/documentation/api-reference/endpoint/search) .
 
 The agent is designed to answer a set of predefined math questions such as:
 
-- "What is your policy?"
-- "check order status of order 123?"
+- " what 4thrives did in pmwc at ewc?"
 
 ---
 
@@ -15,12 +14,17 @@ The agent is designed to answer a set of predefined math questions such as:
 
 2. **Install dependencies:**
    ```bash
-   pip install openai-agents python-dotenv
+   pip install openai-agents python-dotenv tavily-python
 
 Create a .env file in your project directory:
 ```
 GEMINI_API_KEY=your_api_key_here
+Tavily_API_KEY=your_api_key_here
 ```
+put this code in your tool from docs to get results from tavily in json format
+``` tavily_client = TavilyClient(api_key=API_KEY)
+    response = tavily_client.search(query=query,max_results=5)
+        ```
 
 You can obtain your API key from Google AI Studio
 .
@@ -33,28 +37,52 @@ You can obtain your API key from Google AI Studio
 
 Below is a test run of the chatbot
 
-(python-ai-agent) PS C:\programming\ai-assignments> & C:/programming/ai-assignments/.venv/Scripts/python.exe c:/programming/ai-assignments/assignment-6/main.py
-Enter your query: stupid ,idiot
-🚨 Guardrail tripped: Negative sentiment detected
-Reason: Guardrail InputGuardrail triggered tripwire
-🤝 Escalating to Human Agent...
-👩 HUMAN: RunResult:
-- Final output (str):
-    I understand that you're feeling frustrated and angry right now. I want to help if I can, but I can't respond to abusive language. Could you please tell me what's going on and what you need help with, using respectful language? I'll do my best to assist you.
-- 1 new item(s)
-- 0 input guardrail result(s)
-- 0 output guardrail result(s)
-(See `RunResult` for more details)
-(python-ai-agent) PS C:\programming\ai-assignments> & C:/programming/ai-assignments/.venv/Scripts/python.exe c:/programming/ai-assignments/assignment-6/main.py
-Enter your query: check order status of order 123
-🤖 BOT: Order 123 has shipped.
+Enter your query: what 4thrives did in pmwc at ewc
+get_web_data tools hits <---
+You: what 4thrives did in pmwc at ewc
+Agent: [EN] 2025 PMWC at EWC Grand Finals D3 - https://www.youtube.com/watch?v=JRt6xxtbAXo
+[EN] 2025 PMWC at EWC Grand Finals D3 | PUBG MOBILE WORLD CUP at ESPORTS WORLD CUP
+PUBG MOBILE Esports
+4890000 subscribers
+11916 likes
+642029 views
+3 Aug 2025
+🏆 GRAND FINALS DAY 3 | AUGUST 3
 
-(python-ai-agent) PS C:\programming\ai-assignments> & C:/programming/ai-assignments/.venv/Scripts/python.exe c:/programming/ai-assignments/assignment-6/main.py
-Enter your query: what are your policy
-🤖 BOT: Our company specializes in high-quality electronics, including laptops, smartphones, and accessories. All products meet industry standards and come with manufacturer warranties. Our support team is available 24/7. You can return products within 30 days, track shipments, and request assistance with warranties or technical issues. Customer satisfaction is our top priority. 
-(python-ai-agent) PS C:\programming\ai-assignments> & C:/programming/ai-assignments/.venv/Scripts/python.exe c:/programming/ai-assignments/assignment-6/main.py
-Enter your query: what are your policy
-🤖 BOT: Our company specializes in high-quality electronics, including laptops, smartphones, and accessories. All products meet industry standards and come with manufacturer warranties. Our support team is available 24/7. You can return products within 30 days, track shipments, and request assistance with warranties or technical issues. Customer satisfaction is our top priority. 
-Our terms and conditions ensure fair use of our services. We respect user privacy, provide transparent pricing, and adhere to all legal regulations. Please review policies before making a purchase.
 
-🤖 BOT_Name: Customer Support Bot
+🔥 Why You Can’t Miss 2025 PMWC at EWC:
+- The top 16 teams on one stage — no second chances!
+- Every match counts in the race for the championship!
+- Witness PUBG MOBILE history in the making!
+- Explosive SMASH RULE format — pressure-packed, winner-takes-all action!
+
+
+📅 TOURNAMENT SCHEDULE
+Group Stage: July 25–27
+Survival Stage: July 29–30
+Grand Finals: August 1–3
+
+Try PUBG MOBILE now: https://pubgmobile.live/2025PMWC
+
+💰 Total Prize Pool: $3,000,000
+📍 Venue: Boulevard Riyadh City, Saudi Arabia
+
+
+🏆 GRAND FINALS TEAMS:
+
+4Thrives Esports
+Alter Ego Ares
+....
+
+PUBG Mobile - https://esportsworldcup.com/en/competitions/pmwc
+The team who claims the **most points in this stage** will earn the title of PUBG: MOBILE at 2025 Esports World Cup Champion! The second Esports World Cup is running it back, with seven weeks of no
+Esports World Cup to Feature Record-Breaking Prize Pool of More Than $70 Million for 2025 Event Esports World Cup Returns to Riyadh.
+
+PMWC Grand Finals: 4Thrives' Performance Insights - https://www.tiktok.com/@the7wg/video/7533494848305810719
+Discover how 4Thrives performed at the PMWC Grand Finals and where they finished! Get insights and highlights from the event. #pubgmobile #pmwc
+
+4Thrives finished #6 in the PUBG Mobile World Cup at ... - https://www.reddit.com/r/PakSports/comments/1mgmpgb/4thrives_finished_6_in_the_pubg_mobile_world_cup/
+4Thrives finished #6 in the PUBG Mobile World Cup at EWC, Riyadh. They performed exceptionally well, especially considering it was their first
+
+PUBG Mobile World Cup 2025 - https://liquipedia.net/pubgmobile/PUBG_Mobile_World_Cup/2025
+24 teams, divided into 3 groups of 8. 18 matches (6 each day). Each group play 12 matches overall. Top 8 teams advance to Grand Finals.
