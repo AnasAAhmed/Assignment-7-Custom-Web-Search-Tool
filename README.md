@@ -22,9 +22,11 @@ GEMINI_API_KEY=your_api_key_here
 Tavily_API_KEY=your_api_key_here
 ```
 put this code in your tool from docs to get results from tavily in json format
-``` tavily_client = TavilyClient(api_key=API_KEY)
-    response = tavily_client.search(query=query,max_results=5)
-        ```
+
+```
+tavily_client = TavilyClient(api_key=API_KEY)  
+response = tavily_client.search(query=query,max_results=5)
+```
 
 You can obtain your API key from Google AI Studio
 .
